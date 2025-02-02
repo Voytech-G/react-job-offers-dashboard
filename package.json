@@ -1,5 +1,6 @@
 {
-  "name": "react-crash-course-2024",
+  "name": "react-job-offers-dashboard",
+  "homepage": "https://voytech-g.github.io/react-job-offers-dashboard/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,9 +9,12 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server --watch src/jobs.json --port 8000"
+    "server": "json-server --watch src/jobs.json --port 8000",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
