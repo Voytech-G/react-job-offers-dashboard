@@ -1,6 +1,6 @@
 const Hero = ({
   title = "Become a React dev",
-  subtitle = "Find a React job that fits your skillset",
+  subtitle = "Find a React job that fits your skillset.",
 }) => {
   return (
     <section className="bg-indigo-700 py-20 mb-4">
