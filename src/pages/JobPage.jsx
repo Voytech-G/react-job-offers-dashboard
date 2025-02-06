@@ -63,7 +63,6 @@ const JobPage = ({ deleteJob }) => {
               </div>
             </main>
 
-            {/* <!-- Sidebar --> */}
             <aside>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold mb-6">Company Info</h3>
@@ -112,7 +111,9 @@ const JobPage = ({ deleteJob }) => {
 };
 
 const jobLoader = async ({ params }) => {
-  const res = await fetch(`/jobs/${params.id}`);
+  const res = await fetch(
+    `https://67a100445bcfff4fabe15c92.mockapi.io/jobs/${params.id}`
+  );
   const data = await res.json();
   return data;
 };

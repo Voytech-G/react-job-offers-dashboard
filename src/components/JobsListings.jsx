@@ -5,17 +5,13 @@ import Spinner from "./Spinner";
 const JobsListings = ({ isHome = false }) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const API_BASE_URL = "https://67a100445bcfff4fabe15c92.mockapi.io/jobs";
   useEffect(() => {
     const fetchJobs = async () => {
-      const apiUrl = isHome
-        ? "https://67a100445bcfff4fabe15c92.mockapi.io/jobs?limit=3"
-        : "https://67a100445bcfff4fabe15c92.mockapi.io/jobs";
       try {
-        const res = await fetch(apiUrl);
-        const data = await res.json();
-        console.log(data);
-        setJobs(data);
+        const res = await fetch(API_BASE_URL);
+        let data = await res.json();
+        setJobs(isHome ? data.slice(0, 3) : data);
       } catch (error) {
         console.log("Error fetching data", error);
       } finally {
