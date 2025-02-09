@@ -18,7 +18,7 @@ const App = () => {
       "https://67a100445bcfff4fabe15c92.mockapi.io/jobs",
       {
         method: "POST",
-        header: {
+        headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(newJob),
